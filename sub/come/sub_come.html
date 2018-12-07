@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style_sub_come.css">
+        <link rel="stylesheet" type="text/css" href="css/media_sub_come.css">
+        <link rel="stylesheet" href="../../font/fonts.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <title>피자헛</title>
+        
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        
+        <!-- GoogoleMap Asynchronously Loading the API ********************************************* -->
+        <script type="text/javascript">
+            function initialize() {
+            var mapLocation = new google.maps.LatLng('35.154302', '129.059788'); // 지도에서 가운데로 위치할 위도와 경도
+            var markLocation = new google.maps.LatLng('35.154302', '129.059788'); // 마커가 위치할 위도와 경도
+
+            var mapOptions = {
+              center: mapLocation, // 지도에서 가운데로 위치할 위도와 경도(변수)
+              zoom: 18, // 지도 zoom단계
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+                
+            var map = new google.maps.Map(document.getElementById("map-canvas"), // id: map-canvas, body에 있는 div태그의 id와 같아야 함
+                mapOptions);
+         
+            var size_x = 60; // 마커로 사용할 이미지의 가로 크기
+            var size_y = 60; // 마커로 사용할 이미지의 세로 크기
+         
+            // 마커로 사용할 이미지 주소
+            var image = new google.maps.MarkerImage( 'http://www.larva.re.kr/home/img/boximage3.png',
+                                new google.maps.Size(size_x, size_y),
+                                '',
+                                '',
+                                new google.maps.Size(size_x, size_y));
+
+            var marker;
+            marker = new google.maps.Marker({
+                   position: markLocation, // 마커가 위치할 위도와 경도(변수)
+                   map: map,
+                   icon: image, // 마커로 사용할 이미지(변수)
+    //             info: '말풍선 안에 들어갈 내용',
+                   title: '더조은컴퓨터아트학원' // 마커에 마우스 포인트를 갖다댔을 때 뜨는 타이틀
+            });
+
+            var content = "부산광역시 부전동<br/>더조은컴퓨터아트학원 부산점"; // 말풍선 안에 들어갈 내용
+
+            // 마커를 클릭했을 때의 이벤트. 말풍선 뿅~
+            var infowindow = new google.maps.InfoWindow({ content: content});
+
+            google.maps.event.addListener(marker, "click", function() {
+                infowindow.open(map,marker);
+            });
+        }
+            google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+        
+    </head>
+    
+    <body>
+        <div class="bodyWrap">
+            <!-- -->
+            <header id="header">
+                <!-- -->
+                <div class="headerTop">
+
+                    <!-- -->
+                    <div class="m_menu">
+                        <a href="#">
+                            <div class="m_menuImg">
+                            </div>
+                            menu
+                        </a>
+                    </div>
+
+                    <!-- -->
+                    <div class="logo">
+                        <h2>
+                            <a href="#">
+                                <div class="m_logo">
+                                </div>
+                                <img src="../../images/Logo.png">
+                            </a>
+                        </h2>
+                    </div>
+
+                    <!-- -->
+                    <ul class="utill cf">
+                        <li>
+                            <a href="#">사이트맵</a>
+                        </li>
+
+                        <li>
+                            <a href="#">로그인</a>
+                        </li>
+
+                        <li>
+                            <a href="#">주문조회</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- -->
+                <div class="headerBottom">
+                    <div class="menu">
+                        <a href="#">
+                            <img src="../../images/Menu.png">
+                            <br>
+                            menu
+                        </a>
+                    </div>
+
+                    <div>
+                        <ul class="gnb cf">
+                            <li>
+                                <a href="#">
+                                    피자
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    멤버십
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    이벤트/할인
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    고객센터
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- -->
+                
+                <div class="m_gnb">
+                        <div class="m_gnbTop">
+                            회사연혁
+                        </div>
+                        
+                        <div class="m_gnbBottom">
+                          
+                          <div class="m_gnbLeft">
+                                <h3>left</h3>
+                            </div>
+                            <div class="m_gnbRight">
+                                <h3>right</h3>
+                            </div>
+                          
+                           <ul class="m_gnbBottomContents">
+                               <li>
+                                   <a href="#">
+                                       회사소개
+                                   </a>
+                               </li>
+                               
+                               <li>
+                                   <a href="#">
+                                       오시는길
+                                   </a>
+                               </li>
+                               
+                               <li>
+                                   <a href="#">
+                                       이용약관
+                                   </a>
+                               </li>
+                            </ul>
+                            
+                            
+                        </div>
+                    </div>
+            </header>
+            
+            <div class="comeTit">
+                오시는 길
+            </div>
+            
+            <div class="map">
+                <div id="map-canvas" style="width: 100%; height: 100%"></div>
+            </div>
+
+            <div class="comeWrap">
+                <h2>본사위치</h2>
+                <ul>
+                    <li>
+                        <ul>
+                            주소
+                        </ul>
+                        <ul>
+                            서울특별시 영등포구 국회대로74길 4 9-11층
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            지번
+                        </ul>
+                        <ul>
+                            서울특별시 영등포구 여의도동 13-13
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            대표전화
+                        </ul>
+                        <ul>
+                            02)3468-0114
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            FAX
+                        </ul>
+                        <ul>
+                            02-508-8618
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            고객상담
+                        </ul>
+                        <ul>
+                            080-500-5588 (평일 10:30~19:30)
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            오시는길
+                        </ul>
+                        <ul>
+                            지하철 9호설 국회의사당역 1번 출구, 도보 5분 (360m)<br>
+                            버스 정류장 국회의사당역<br>
+                            국회의사당의정연수원 입구 맞은 편, SKKH여의도 주유소 옆 건물
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </body>
+    
+    <!-- -->
+    <footer id="footer">
+      
+      <!-- -->
+      
+       <div class="m_footerWrap">
+           <div class="m_footerContents">
+               <ul class="m_snsBtn cf">
+                   <li>
+                        <a href="#">
+                            <img src="../../m_images/m_facebook.png" alt="m_facebook" width="50%" height="50%">
+                            <p>페이스북</p>
+                        </a>
+                   </li>
+                   
+                   <li>
+                        <a href="#">
+                            <img src="../../m_images/m_instagram.png" alt="m_instagram" width="50%" height="50%">
+                            <p>인스타그램</p>
+                        </a>
+                   </li>
+                   
+                   <li>
+                        <a href="#">
+                            <img src="../../m_images/m_twitter.png" alt="m_twitter" width="50%" height="50%">
+                            <p>트위터</p>
+                        </a>
+                   </li>
+               </ul>
+               
+               <div class="m_footerLogo">
+                   <a href="#">
+                       <img src="../../m_images/m_footerLogo.png" alt="m_footerLogo">
+                   </a>
+               </div>
+               
+               <div class="m_footerInfo">
+                        <ul>
+                            <li>
+                                서울시 영등포구 국회대로 74길 4, 9~11층
+                            </li>
+                            
+                            <li>
+                                사업자등록번호 120-81-63948
+                            </li>
+                            
+                            <li>
+                                통신판매업신고번호 제2018-서울영등포-1220호
+                            </li>
+                            
+                            <li>
+                                한국피자헛유한회사 대표이사 : 이 스티븐 크리스토퍼
+                            </li>
+                            
+                            <li>
+                                개인정보 보호책임자 : 강명우
+                            </li>
+                            
+                            <li>
+                                Copylight By Dohyun.Kim
+                            </li>
+                        </ul>
+                </div>
+               
+           </div>
+       </div>
+       
+       <!-- -->
+       
+        <div class="footerWrap">
+            
+            <!-- -->
+            <div class="footerContents">
+            
+                <!-- -->
+                <div class="footerLogo">
+                    <h2>
+                        <a href="#">
+                            <div class="footerLogoImg"></div>
+                        </a>
+                    </h2>
+                </div>
+
+                <!-- -->
+                <div class="footerInfo">
+                        <ul>
+                            <li>
+                                서울시 영등포구 국회대로 74길 4, 9~11층
+                            </li>
+                            
+                            <li>
+                                사업자등록번호 120-81-63948 | 통신판매업신고번호 제2018-서울영등포-1220호
+                            </li>
+                            
+                            <li>
+                                한국피자헛유한회사 대표이사 : 이 스티븐 크리스토퍼
+                            </li>
+                            
+                            <li>
+                                개인정보 보호책임자 : 강명우
+                            </li>
+                            
+                            <br>
+                            
+                            <li>
+                                Copylight By Dohyun.Kim
+                            </li>
+                        </ul>
+                </div>
+                
+                <!-- -->
+                <ul class="snsBtn">
+                    <a href="#">
+                        <li>
+                            
+                        </li>
+                    </a>
+                    
+                    <a href="#">
+                        <li>
+                            
+                        </li>
+                    </a>
+                    
+                    <a href="#">
+                        <li>
+                            
+                        </li>
+                    </a>
+                </ul>
+                
+            </div>
+            
+            <div class="quickMenu">
+                <ul>
+                    <div class="quickMenuTit">
+                        <a href="#">
+                            <div class="quickMenuImg">
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="quickMenuIn">
+                        <li>
+                            <div class="margin0Auto">
+                                <a href="#">
+                                    <br>
+                                    <div class="quickMenuInImg01">
+                                    </div>
+                                    주문하기
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="margin0Auto">
+                                <a href="#">
+                                    <br>
+                                    <div class="quickMenuInImg02">
+                                    </div>
+                                    멤버십
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="margin0Auto">
+                                <a href="#">
+                                    <br>
+                                    <div class="quickMenuInImg03">
+                                    </div>
+                                    TOP
+                                </a>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            
+        <!-- -->
+        </div>
+    </footer>
+</html>

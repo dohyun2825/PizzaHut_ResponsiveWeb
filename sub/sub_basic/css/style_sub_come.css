@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+body{
+    min-width: 100%;
+    font-family: 'NanumSquare', 'snas-serif';
+}
+
+body, h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+}
+
+div{
+    display: block;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.cf:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.bodyWrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.margin0Auto{
+    margin: 0 auto;
+}
+
+/* */ /* */ /* */
+
+#header{}
+
+.headerTop{
+    padding: 15px 0;
+    position: relative;
+}
+
+.logo{
+    text-align: center;
+}
+
+.logoImg{
+    background: url("../../../images/Logo.png");
+    width: 110px;
+    height: 103px;
+    margin: 0 auto;
+}
+
+.utill{
+    position: absolute;
+    right: 32px;
+    bottom: 52px;
+}
+
+.utill li{
+    float: left;
+    font-size: 14px;
+}
+
+.utill li:after{
+    content: "";
+    width: 2px;
+    height: 9px;
+    background: #b3b2b2;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.utill li:last-child:after{
+    display: none;
+}
+
+.headerBottom{
+    padding-bottom: 38px;
+    position: relative;
+    text-align: center;
+}
+
+.headerBottom div{
+    display: inline-block;
+    
+}
+
+.m_menu{
+    display: none;
+}
+
+.m_logo{
+    display: none;
+}
+
+.menu{
+    width: 52px;
+    text-align: center;
+    position: absolute;
+    left: 43px;
+}
+
+.menuImg{
+    width: 40px;
+    height: 49px;
+    background: url("../../../images/Menu.png");
+}
+
+.menu a{
+    color: #ee3a43;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.menu a img{
+    margin-bottom: 5px;
+}
+
+.gnb{
+    
+}
+
+.gnb li{
+    float: left;
+    width: 200px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* */ /* */ /* */
+
+
+
+
+
+/* */ /* */ /* */
+
+#footer{
+    width: 100%;
+    background: #f7f7f7;
+    display: block;
+    padding-top: 30px;
+}
+
+.footerWrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footerWrap{
+    
+}
+
+.footerLogo{
+    vertical-align: top;
+}
+
+.footerLogoImg{
+    background: url("../../../images/footerLogo.png");
+    width: 129px;
+    height: 32px;
+    margin-left: 43px;
+}
+
+.footerLogo, .snsBtn{
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+}
+
+.footerInfo{
+    display: inline-block;
+    width: 50%;
+}
+
+.footerInfo ul li{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 200%;
+}
+
+.snsBtn a{
+    display: inline-block;
+}
+
+.snsBtn a li{
+    background: url("../../../images/footerSnsBtn.png") 0 0;
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    background-position: center;
+    margin-right: 9px;
+}
+
+.snsBtn a:nth-child(2) li{
+    background: url("../../../images/footerSnsBtn.png") 39px 0;
+}
+
+.snsBtn a:nth-child(3) li{
+    background: url("../../../images/footerSnsBtn.png") 87px 0;
+    margin-right: 0;
+}
+
+.quickMenu{
+    position: fixed;
+    top: 25%;
+    right: 3%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.quickMenuImg{
+    background: url("../../../images/QuickMenu.png");
+    width: 96px;
+    height: 89px;
+}
+
+.quickMenuIn{
+    width: 78px;
+    height: 209px;
+    background: url("../../../images/QuickMenuBackground.png") no-repeat;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.quickMenuIn li{
+    height: 80px;
+    background: url("../../../images/QuichMenuBar.png") no-repeat;
+    background-position: bottom center;
+}
+
+.quickMenuIn li:nth-child(2){
+    height: 73px;
+}
+
+.quickMenuIn li:last-child{
+    background: none;
+    height: 56px;
+}
+
+.quickMenuInImg01, .quickMenuInImg02, .quickMenuInImg03{
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.quickMenuInImg01{
+    background: url("../../../images/quickMenuIn01.png") no-repeat;
+    width:31px;
+    height:31px;
+}
+
+.quickMenuInImg02{
+    background: url("../../../images/quickMenuIn02.png") no-repeat;
+    width:30px;
+    height:25px;
+}
+
+.quickMenuInImg03{
+    background: url("../../../images/quickMenuIn03.png") no-repeat;
+    width:25px;
+    height:12px;
+}
+
+.m_footerWrap{
+    display: none;
+}
